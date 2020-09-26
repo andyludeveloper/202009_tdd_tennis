@@ -26,6 +26,12 @@ public class TennisTest {
         String result = tennis.score();
         assertThat(result, is("thirty love"));
     }
+    @Test
+    public void test_forty_love() {
+        firstPlayerScoreTimes(3);
+        String result = tennis.score();
+        assertThat(result, is("forty love"));
+    }
 
     private void firstPlayerScoreTimes(int times) {
         for(int i=0;i<times; i++){
