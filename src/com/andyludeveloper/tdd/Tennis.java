@@ -10,6 +10,7 @@ public class Tennis {
         scoreLookup = new HashMap<>();
         scoreLookup.put(1, "fifteen");
         scoreLookup.put(2, "thirty");
+        scoreLookup.put(3, "forty");
     }
 
     String score(){
