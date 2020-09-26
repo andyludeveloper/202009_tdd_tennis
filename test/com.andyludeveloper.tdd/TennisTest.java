@@ -6,27 +6,30 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 public class TennisTest {
+    Tennis tennis = new Tennis();
 
     @Test
     public void test_love_all(){
-        Tennis tennis = new Tennis();
         String result = tennis.score();
         assertThat(result, is("love all"));
     }
 
     @Test
     public void test_fifteen_love() {
-        Tennis tennis = new Tennis();
-        tennis.firstPlayerScore();
+        firstPlayerScoreTimes(1);
         String result = tennis.score();
         assertThat(result, is("fifteen love"));
     }
     @Test
     public void test_thirty_love() {
-        Tennis tennis = new Tennis();
-        tennis.firstPlayerScore();
-        tennis.firstPlayerScore();
+        firstPlayerScoreTimes(2);
         String result = tennis.score();
         assertThat(result, is("thirty love"));
+    }
+
+    private void firstPlayerScoreTimes(int times) {
+        for(int i=0;i<times; i++){
+            tennis.firstPlayerScore();
+        }
     }
 }
