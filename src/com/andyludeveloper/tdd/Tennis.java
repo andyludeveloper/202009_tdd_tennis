@@ -10,6 +10,9 @@ public class Tennis {
         if(firstPlayerScore==1){
             return "fifteen love";
         }
+        if(firstPlayerScore == 2){
+            return "thirty love";
+        }
         return "love all";
     }
 
