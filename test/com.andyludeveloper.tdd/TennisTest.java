@@ -10,48 +10,50 @@ public class TennisTest {
 
     @Test
     public void test_love_all(){
-        String result = tennis.score();
-        assertThat(result, is("love all"));
+        shouldBe("love all");
     }
 
     @Test
     public void test_fifteen_love() {
         firstPlayerScoreTimes(1);
-        String result = tennis.score();
-        assertThat(result, is("fifteen love"));
+        shouldBe("fifteen love");
     }
+
     @Test
     public void test_thirty_love() {
         firstPlayerScoreTimes(2);
-        String result = tennis.score();
-        assertThat(result, is("thirty love"));
+        shouldBe("thirty love");
     }
     @Test
     public void test_forty_love() {
         firstPlayerScoreTimes(3);
-        String result = tennis.score();
-        assertThat(result, is("forty love"));
+        shouldBe("forty love");
     }
-
     @Test
     public void test_love_fifteen() {
         secondPlayerScoreTimes(1);
-        String result = tennis.score();
-        assertThat(result, is("love fifteen"));
-    }
-    @Test
-    public void test_love_thirty() {
-        secondPlayerScoreTimes(2);
-        String result = tennis.score();
-        assertThat(result, is("love thirty"));
+        shouldBe("love fifteen");
     }
 
     @Test
+    public void test_love_thirty() {
+        secondPlayerScoreTimes(2);
+        shouldBe("love thirty");
+    }
+    @Test
     public void test_deuce() {
+        givenDeuce();
+        shouldBe("deuce");
+    }
+
+    private void givenDeuce() {
         firstPlayerScoreTimes(3);
         secondPlayerScoreTimes(3);
+    }
+
+    private void shouldBe(String expected) {
         String result = tennis.score();
-        assertThat(result, is("deuce"));
+        assertThat(result, is(expected));
     }
 
     private void secondPlayerScoreTimes(int times) {
