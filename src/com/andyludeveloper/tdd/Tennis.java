@@ -4,7 +4,9 @@ import java.util.HashMap;
 
 public class Tennis {
     private int firstPlayerScore;
+    private int secondPlayerScore;
     private final HashMap<Integer, String> scoreLookup;
+
     Tennis(){
         firstPlayerScore = 0;
         scoreLookup = new HashMap<>();
@@ -14,6 +16,9 @@ public class Tennis {
     }
 
     String score(){
+        if(secondPlayerScore>0){
+            return "love "+ scoreLookup.get(secondPlayerScore);
+        }
         if(firstPlayerScore>0){
             return scoreLookup.get(firstPlayerScore)+" love";
         }
@@ -22,5 +27,8 @@ public class Tennis {
 
     public void firstPlayerScore() {
         firstPlayerScore++;
+    }
+    public void secondPlayerScore() {
+        secondPlayerScore++;
     }
 }
