@@ -12,6 +12,7 @@ public class Tennis {
     Tennis(String player1, String player2){
         firstPlayerScore = 0;
         scoreLookup = new HashMap<>();
+        scoreLookup.put(0, "love");
         scoreLookup.put(1, "fifteen");
         scoreLookup.put(2, "thirty");
         scoreLookup.put(3, "forty");
@@ -36,14 +37,11 @@ public class Tennis {
             }
             return "deuce";
         }
+        if (firstPlayerScore < 3 && firstPlayerScore == secondPlayerScore){
+            return scoreLookup.get(firstPlayerScore) + " all";
+        }
 
-        if(secondPlayerScore>0){
-            return "love "+ scoreLookup.get(secondPlayerScore);
-        }
-        if(firstPlayerScore>0){
-            return scoreLookup.get(firstPlayerScore)+" love";
-        }
-        return "love all";
+        return scoreLookup.get(firstPlayerScore) +" "+ scoreLookup.get(secondPlayerScore);
     }
 
     public void firstPlayerScore() {
