@@ -64,6 +64,12 @@ public class TennisTest {
         firstPlayerScoreTimes(2);
         shouldBe("Tom win");
     }
+    @Test
+    public void test_player2_win() {
+        givenDeuce();
+        secondPlayerScoreTimes(2);
+        shouldBe("Mary win");
+    }
 
     private void givenDeuce() {
         firstPlayerScoreTimes(3);

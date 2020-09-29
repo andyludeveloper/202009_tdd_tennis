@@ -29,6 +29,9 @@ public class Tennis {
                 return player1 + " adv";
             }
             if(secondPlayerScore>firstPlayerScore){
+                if(secondPlayerScore-firstPlayerScore>1){
+                    return player2 +" win";
+                }
                 return player2 + " adv";
             }
             return "deuce";
