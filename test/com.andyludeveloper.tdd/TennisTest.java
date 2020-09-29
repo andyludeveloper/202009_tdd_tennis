@@ -6,7 +6,7 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 public class TennisTest {
-    Tennis tennis = new Tennis();
+    Tennis tennis = new Tennis("Tom");
 
     @Test
     public void test_love_all(){

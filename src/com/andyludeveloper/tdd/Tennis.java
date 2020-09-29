@@ -6,17 +6,23 @@ public class Tennis {
     private int firstPlayerScore;
     private int secondPlayerScore;
     private final HashMap<Integer, String> scoreLookup;
+    public String player1;
 
-    Tennis(){
+    Tennis(String player1){
         firstPlayerScore = 0;
         scoreLookup = new HashMap<>();
         scoreLookup.put(1, "fifteen");
         scoreLookup.put(2, "thirty");
         scoreLookup.put(3, "forty");
+        this.player1 = player1;
     }
 
     String score(){
-        if(firstPlayerScore >=3 && secondPlayerScore >=3 && firstPlayerScore == secondPlayerScore){
+
+        if(firstPlayerScore >=3 && secondPlayerScore >=3){
+            if(firstPlayerScore>secondPlayerScore){
+                return player1 + " adv";
+            }
             return "deuce";
         }
 
