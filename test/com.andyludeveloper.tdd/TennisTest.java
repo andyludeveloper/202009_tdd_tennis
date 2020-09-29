@@ -46,6 +46,13 @@ public class TennisTest {
         shouldBe("deuce");
     }
 
+    @Test
+    public void test_player1_adv() {
+        givenDeuce();
+        firstPlayerScoreTimes(1);
+        shouldBe("Tom adv");
+    }
+
     private void givenDeuce() {
         firstPlayerScoreTimes(3);
         secondPlayerScoreTimes(3);
