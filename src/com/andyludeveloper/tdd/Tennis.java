@@ -16,6 +16,10 @@ public class Tennis {
     }
 
     String score(){
+        if(firstPlayerScore >=3 && secondPlayerScore >=3 && firstPlayerScore == secondPlayerScore){
+            return "deuce";
+        }
+
         if(secondPlayerScore>0){
             return "love "+ scoreLookup.get(secondPlayerScore);
         }
