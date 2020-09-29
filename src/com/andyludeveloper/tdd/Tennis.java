@@ -23,6 +23,9 @@ public class Tennis {
 
         if(firstPlayerScore >=3 && secondPlayerScore >=3){
             if(firstPlayerScore>secondPlayerScore){
+                if(firstPlayerScore-secondPlayerScore>1){
+                    return player1 + " win";
+                }
                 return player1 + " adv";
             }
             if(secondPlayerScore>firstPlayerScore){
